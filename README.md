@@ -1,6 +1,8 @@
 # SQl-Amazon-sales
 
 --------Purposes Of This Capstone Project------------------------------
+
+
 The major aim of this project is to gain insight into the sales data of Amazon to understand the different factors that affect sales of the different branches. Gather the information to give solution the client question and requirement that improve sales so they can take data-driven decision.
 
 
