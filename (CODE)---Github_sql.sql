@@ -145,7 +145,7 @@ ORDER BY Revenue DESC;
 
 
 -- 7) In which month did the cost of goods sold reach its peak?
-SELECT Month_Name,SUM(cogs)  as Revenue
+SELECT Month_Name,SUM(cogs)  as total_cogs
 FROM Amazon
 GROUP BY Month_Name
 ORDER BY SUM(cogs) DESC;
@@ -168,15 +168,17 @@ ORDER BY Revenue DESC;
 -- 10) Which product line incurred the highest Value Added Tax?
 SELECT Product_line , round(SUM(VAT),2) as Value_Added_Tax
 FROM amazon
-GROUP BY Product_Line;
+GROUP BY Product_Line 
+ORDER BY Value_Added_Tax DESC;
 
 
 -- 11) For each product line, add a column indicating "Good" if its sales are above average, otherwise "Bad."-
 
-SELECT Product_line,
- CASE WHEN cogs >  avg(cogs) over (partition by Product_line) THEN 'Good' ELSE 'Bad' END as sales_indicator
- from Amazon;
-
+SELECT Product_line,SUM(cogs) as total_cogs,
+ CASE WHEN SUM(cogs) >  (SELECT AVG(cogs) FROM Amazon) THEN 'Good' ELSE 'Bad' END as sales_indicator
+ from Amazon
+GROUP BY  Product_line
+ORDER BY total_cogs;
 
 -- 12) Identify the branch that exceeded the average number of products sold.
 SELECT Branch
@@ -185,11 +187,22 @@ WHERE Quantity > (SELECT AVG(quantity) FROM amazon);
 
 
 -- 13) Which product line is most frequently associated with each gender?
-SELECT Product_Line,Gender,count(Product_Line) as gender_count
-FROM amazon 
-GROUP BY GENDER,Product_Line 
-ORDER BY GENDER,gender_count DESC;
 
+WITH gender_1 AS (
+    SELECT 
+        Product_Line,
+        Gender,
+        COUNT(Invoice_ID) AS Invoice_count,
+        Row_number() over(partition by Gender ORDER BY COUNT(Invoice_ID) DESC) AS Gender_freq
+    FROM 
+        amazon 
+    GROUP BY 
+        Gender,
+        Product_Line )
+    
+SELECT * 
+FROM gender_1
+where Gender_freq=1;
 
 -- 14) Calculate the average rating for each product line.
 SELECT Product_line,round(AVG(rating),2) as AVG_Rating
@@ -202,8 +215,9 @@ ORDER BY AVG(rating) DESC;
 
 SELECT day_name,time_of_day,COUNT(cogs) as sales_occurence 
 FROM amazon
+WHERE day_name NOT IN ('Sunday',"Saturday")
 GROUP BY day_name,time_of_day
-ORDER BY sales_occurence DESC;
+ORDER BY day_name,sales_occurence DESC;
 
 
 -- 16) Identify the customer type contributing the highest revenue.
