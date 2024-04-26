@@ -107,61 +107,109 @@ This dataset contains sales transactions from three different branches of Amazon
 
 Business Questions To Answer:
 1) What is the count of distinct cities in the dataset?
+
 -- Count of distinct city is 3 ( Yangon, Naypyitaw , Mandalay)
+
 2) For each branch, what is the corresponding city?
+
 --Each branch has only one city to each branch . Branch A- Yangon, Branch C- Naypyitaw , Branch B-Mandalay respectively
+
 3) What is the count of distinct product lines in the dataset?
+
 --There are 6 distinct product line count (Health and Beauty, Electronics accessories, Sport and travel, Home and lifestyle, Food and Beverages, Fashion accessories)
+
 4) Which payment method occurs most frequently?
+
 --Most payment method is Cash followed by E-wallet , Credit cash.
+
 5) Which product line has the highest sales?
+
 -- Highest sales is done by Food and Beverages followed by Fashion accessories, Sport and travel, Home and lifestyle, Electronics accessories and Health and Beauty has lowest sales.
+
 6) How much revenue is generated each month?
+
 --Highest revenue is earned in January Followed by March and February.
+
 7) In which month did the cost of goods sold reach its peak?
+
 -- January is the highest revenue month followed by March and February. This analysis can be get by summing cogs(Cost Of Goods sold ) by grouping the month. There are only 3 months January, February and March.
  
- 8) Which product line generated the highest revenue?
+8) Which product line generated the highest revenue?
+
 We have calculate summed the unit price and quantity get revenue and order by Revenue . As Food and beverages has generate the highest revenue followed by fashion accessories ,Sport & travel ,home & life style , Electronics & accessories and Health & beauty.
+
 9) In which city was the highest revenue recorded?
-As mentioned above, we calculate revenue by adding gross income and cost of sold goods has arranged in descending to get city with highest revenue which is Naypyitaw Followed by Yangon ,Mandalay.
+
+--As mentioned above, we calculate revenue by adding gross income and cost of sold goods has arranged in descending to get city with highest revenue which is Naypyitaw Followed by Yangon ,Mandalay.
+
 10) Which product line incurred the highest Value Added Tax?
-As the vat is given which is grouped by product line get us insight that the Food & beverages Followed by accessories Sport & travel, Home & travel Electronics accessories, and Health & beauty.
+
+--As the vat is given which is grouped by product line get us insight that the Food & beverages Followed by accessories Sport & travel, Home & travel Electronics accessories, and Health & beauty.
+
 11) Which product line is most frequently associated with each gender?
-As there is different preferences to product line for female which is Fashion accessories , Food & beverages , Sport & travel, Electronics accessories, Home & lifestyle and Health & beauty,
+
+--As there is different preferences to product line for female which is Fashion accessories , Food & beverages , Sport & travel, Electronics accessories, Home & lifestyle and Health & beauty,
 Male had preferences to Health & beauty followed by Electronics accessories, Food & beverages, Fashion accessories , Home & lifestyle and Sport & travel.
+
 12) Calculate the average rating for each product line.
+
 --The highest average rating for product line is Food & beverages followed by Fashion accessories, Health & beauty, Electronics accessories , Sport & travel and Home & lifestyle.
+
 13) Count the sales occurrences for each time of day on every weekday.
+
 -- The highest sales occurrences at Saturday(Evening) followed by Tuesday(Evening),Wednesday(Afternoon).
 
  14) Identify the customer type contributing the highest revenue.
+
 -- there are only two customer type as member and normal but as per revenue member customer type generate more revenue than normal customer type around 4% more than normal member type.
+
 15) Determine the city with the highest VAT percentage.
+
 -- As the cities is arranged in the highest VAT are Naypyitaw after that Yangon and Mandalay. Yangon and Mandalay had the similar percentage but the value of Yangon is higher then Mandalay.
+
 16) Identify the customer type with the highest VAT payments.
+
 --There is a small difference between only 2 customer type which is normal and member type . Member has sightly higher value which is around 300 more than normal customer type VAT value.
+
 17) What is the count of distinct customer types in the dataset?
+
 --There are only 2 customer type Member and Normal customer type.
+
 18) What is the count of distinct payment methods in the dataset?
+
 --There is only 3 payment method which is E-wallet, cash and credit card
+
 19) Which customer type occurs most frequently?
+
 --there are normal and member customer type but there are 3 members customer type than normal customer type.
+
 20) Identify the customer type with the highest purchase frequency.
+
 --there are normal and member customer type but there are 3 members customer type than normal customer type.
+
 21) Determine the predominant gender among customers.
+
 -- In member customer type, there are female are predominant than male and in normal customer type, there are male are predominant than female.
+
 22) Examine the distribution of genders within each branch.
+
 -- gender distribution among branch A has male has 179 members and Female 160 members, branch B has male has 169 members and Female 160 members, and So branch A has Female has 177 members and Female 150 members
+
 23) Identify the time of day when customers provide the most ratings.
 
 -- As per data, Afternoon has highest average rating has 7.02 rating followed by Morning and Evening
+
 24) Determine the time of day with the highest customer ratings for each branch.
+    
 -- For every branch there is a time of day in which the highest rating is given 9.9 rating at each time of day for each branch has given 9.9 rating ones in every time of day.
+
 25) Identify the day of the week with the highest average ratings.
-Monday has highest average rating 7.13 rating followed by Friday(7.06), Tuesday(7.00) , Sunday(6.99) , Saturday(6.90) ,Thursday(6.89) and Wednesday(6.76).
-26) Determine the day of the week with the highest average ratings for each branch. -- For branch A , Friday(7.31) as highest average rating followed by
-Monday(7.10) ,Sunday, Tuesday, Thursday, Wednesday and Saturday.
+
+--Monday has highest average rating 7.13 rating followed by Friday(7.06), Tuesday(7.00) , Sunday(6.99) , Saturday(6.90) ,Thursday(6.89) and Wednesday(6.76).
+
+26) Determine the day of the week with the highest average ratings for each branch.
+    
+-- For branch A , Friday(7.31) as highest average rating followed byMonday(7.10) ,Sunday, Tuesday, Thursday, Wednesday and Saturday.
 For Branch B, Monday (7.27) as highest average rating followed by Tuesday, Sunday, Thursday, Saturday, Friday, Wednesday .
 For Branch C, Saturday(7.23) as highest average rating followed by Friday, Wednesday, Monday , Sunday, Tuesday, and Thursday .
 
