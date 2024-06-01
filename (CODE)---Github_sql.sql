@@ -172,21 +172,7 @@ GROUP BY Product_Line
 ORDER BY Value_Added_Tax DESC;
 
 
--- 11) For each product line, add a column indicating "Good" if its sales are above average, otherwise "Bad."-
-
-SELECT Product_line,SUM(cogs) as total_cogs,
- CASE WHEN SUM(cogs) >  (SELECT AVG(cogs) FROM Amazon) THEN 'Good' ELSE 'Bad' END as sales_indicator
- from Amazon
-GROUP BY  Product_line
-ORDER BY total_cogs;
-
--- 12) Identify the branch that exceeded the average number of products sold.
-SELECT Branch
-FROM amazon
-WHERE Quantity > (SELECT AVG(quantity) FROM amazon);
-
-
--- 13) Which product line is most frequently associated with each gender?
+-- 11) Which product line is most frequently associated with each gender?
 
 WITH gender_1 AS (
     SELECT 
@@ -204,103 +190,102 @@ SELECT *
 FROM gender_1
 where Gender_freq=1;
 
--- 14) Calculate the average rating for each product line.
+-- 12) Calculate the average rating for each product line.
 SELECT Product_line,round(AVG(rating),2) as AVG_Rating
 FROM amazon 
 GROUP BY Product_Line
 ORDER BY AVG(rating) DESC;
 
 
--- 15) Count the sales occurrences for each time of day on every weekday.
+-- 13) Count the sales occurrences for each time of day on every weekday.
 
 SELECT day_name,time_of_day,COUNT(cogs) as sales_occurence 
 FROM amazon
-WHERE day_name NOT IN ('Sunday',"Saturday")
 GROUP BY day_name,time_of_day
 ORDER BY day_name,sales_occurence DESC;
 
 
--- 16) Identify the customer type contributing the highest revenue.
+-- 14) Identify the customer type contributing the highest revenue.
 SELECT customer_type,SUM(unit_price*quantity) AS Revenue
 FROM amazon
 GROUP BY customer_type
 ORDER BY Revenue DESC;
 
 
--- 17)  Determine the city with the highest VAT percentage.
+-- 15)  Determine the city with the highest VAT percentage.
 SELECT DISTINCT city,round(SUM(VAT) over(Partition by city),2) as VAT_total,round((SUM(VAT) over(Partition by city)/SUM(VAT) over()*100),2) AS VAT_percentage
 FROM amazon
 ORDER BY VAT_percentage DESC;
 
 
--- 18) Identify the customer type with the highest VAT payments.
+-- 16) Identify the customer type with the highest VAT payments.
 SELECT customer_type,sum(VAT) AS TOTAL_VAT
 FROM amazon
 GROUP BY customer_type
 ORDER BY TOTAL_VAT DESC;
 
 
--- 19) What is the count of distinct customer types in the dataset?
+-- 17) What is the count of distinct customer types in the dataset?
 SELECT customer_type,COUNT(DISTINCT(customer_type)) AS CUSTOMER_TYPE
 FROM amazon
 GROUP BY customer_type;
 
 
--- 20) What is the count of distinct payment methods in the dataset?
+-- 18) What is the count of distinct payment methods in the dataset?
 SELECT COUNT(DISTINCT(payment_method)) AS PAYMENT_METHOD  
 FROM amazon;
 
 
--- 21) Which customer type occurs most frequently?
+-- 19) Which customer type occurs most frequently?
 SELECT customer_type,COUNT(customer_type) AS COUNT_CUSTOMER_TYPE 
 FROM amazon
 GROUP BY customer_type
 ORDER By COUNT_CUSTOMER_TYPE DESC;
 
 
--- 22) Identify the customer type with the highest purchase frequency.
+-- 20) Identify the customer type with the highest purchase frequency ?
 SELECT Customer_type,COUNT(invoice_id) as purcahse_frequency
 FROM AMAZON 
 GROUP BY customer_type
 ORDER BY purcahse_frequency DESC;
 
 
--- 23) Determine the predominant gender among customers.
+-- 21) Determine the predominant gender among customers.
 SELECT customer_type,gender,COUNT(invoice_id) as id_count
 FROM AMAZON 
 GROUP BY gender,customer_type
 ORDER BY customer_type,id_count DESC;
 
 
--- 24) Examine the distribution of genders within each branch.
+-- 22) Examine the distribution of genders within each branch.
 SELECT BRANCH,GENDER,COUNT(GENDER) AS GENDER_SUM
 FROM amazon
 GROUP BY BRANCH,GENDER
 ORDER BY BRANCH, GENDER_SUM DESC;
 
 
--- 25) Identify the time of day when customers provide the most ratings.
+-- 23) Identify the time of day when customers provide the most ratings.
 SELECT time_of_day,round(avg(rating),2) AS avg_rating 
 FROM amazon 
 GROUP BY time_of_day
 ORDER BY avg_rating DESC;
 
 
--- 26) Determine the time of day with the highest customer ratings for each branch.
+-- 24) Determine the time of day with the highest customer ratings for each branch.
 SELECT branch,time_of_day,MAX(rating) AS MAX_Rating 
 FROM amazon 
 GROUP BY branch,time_of_day
 ORDER  BY branch;
 
 
--- 27) Identify the day of the week with the highest average ratings.
+-- 25) Identify the day of the week with the highest average ratings.
 SELECT day_name,round(avg(rating),2) as AVG_RATING
 FROM amazon
 GROUP BY day_name
 ORDER BY AVG_RATING DESC;
 
 
--- 28) Determine the day of the week with the highest average ratings for each branch.
+-- 26) Determine the day of the week with the highest average ratings for each branch.
 SELECT branch,day_name,round(avg(rating),2) as MAX_AVG_RATING
 FROM amazon
 GROUP BY branch,day_name
