@@ -46,33 +46,31 @@ This dataset contains sales transactions from three different branches of Amazon
 
 15)Count the sales occurrences for each time of day on every weekday.
 
-17)Identify the customer type contributing the highest revenue.
+16)Identify the customer type contributing the highest revenue.
 
-18)Determine the city with the highest VAT percentage.
+17)Determine the city with the highest VAT percentage.
 
-19)Identify the customer type with the highest VAT payments.
+18)Identify the customer type with the highest VAT payments.
 
-20)What is the count of distinct customer types in the dataset?
+19)What is the count of distinct customer types in the dataset?
 
-21)What is the count of distinct payment methods in the dataset?
+20)What is the count of distinct payment methods in the dataset?
 
-22)Which customer type occurs most frequently?
+21)Which customer type occurs most frequently?
 
-23)Which customer type occurs most frequently?
+22)Identify the customer type with the highest purchase frequency.
 
-24)Identify the customer type with the highest purchase frequency.
+23)Determine the predominant gender among customers.
 
-25)Determine the predominant gender among customers.
+24)Examine the distribution of genders within each branch.
 
-26)Examine the distribution of genders within each branch.
+25)Identify the time of day when customers provide the most ratings.
 
-27)Identify the time of day when customers provide the most ratings.
+26) Determine the time of day with the highest customer ratings for each branch.
 
-28) Determine the time of day with the highest customer ratings for each branch.
+27)Identify the day of the week with the highest average ratings.
 
-29)Identify the day of the week with the highest average ratings.
-
-30)Determine the day of the week with the highest average ratings for each branch.
+28)Determine the day of the week with the highest average ratings for each branch.
 
 # Approach Used--
 
