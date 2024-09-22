@@ -16,7 +16,7 @@ This dataset contains sales transactions from three different branches of Amazon
 
 # :green_book: Business Questions To Answer
 
-1)What is the count of distinct cities in the dataset?
+**1)What is the count of distinct cities in the dataset?
 
 2)For each branch, what is the corresponding city?
 
@@ -70,7 +70,7 @@ This dataset contains sales transactions from three different branches of Amazon
 
 27)Identify the day of the week with the highest average ratings.
 
-28)Determine the day of the week with the highest average ratings for each branch.
+28)Determine the day of the week with the highest average ratings for each branch.**
 
 # :key: Approach Used--
 
