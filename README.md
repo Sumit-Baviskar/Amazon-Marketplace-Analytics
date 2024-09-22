@@ -16,9 +16,9 @@ This dataset contains sales transactions from three different branches of Amazon
 
 # :green_book: Business Questions To Answer
 
-**1)What is the count of distinct cities in the dataset?
+**1)What is the count of distinct cities in the dataset?**
 
-2)For each branch, what is the corresponding city?
+**2)For each branch, what is the corresponding city?**
 
 3)What is the count of distinct product lines in the dataset?
 
