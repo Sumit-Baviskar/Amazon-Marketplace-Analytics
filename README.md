@@ -478,7 +478,8 @@ For Branch C, Saturday(7.23) as highest average rating followed by Friday, Wedne
 # :key: Analysis List
 
 
-# :key: Product Analysis**Conduct analysis on the data to understand the different product lines, the products lines performing best and the product lines that need to be improved.
+# :key: Product Analysis
+Conduct analysis on the data to understand the different product lines, the products lines performing best and the product lines that need to be improved.
 
 
 **CODE**
