@@ -38,39 +38,37 @@ This dataset contains sales transactions from three different branches of Amazon
 
 **11) For each product line, add a column indicating "Good" if its sales are above average, otherwise "Bad."**
 
-**12) Identify the branch that exceeded the average number of products sold.**
+**12) Which product line is most frequently associated with each gender?**
 
-**13) Which product line is most frequently associated with each gender?**
+**13) Calculate the average rating for each product line.**
 
-**14) Calculate the average rating for each product line.**
+**14) Count the sales occurrences for each time of day on every weekday.**
 
-**15) Count the sales occurrences for each time of day on every weekday.**
+**15) Identify the customer type contributing the highest revenue.**
 
-**16) Identify the customer type contributing the highest revenue.**
+**16) Determine the city with the highest VAT percentage.**
 
-**17) Determine the city with the highest VAT percentage.**
+**17) Identify the customer type with the highest VAT payments.**
 
-**18) Identify the customer type with the highest VAT payments.**
+**18) What is the count of distinct customer types in the dataset?**
 
-**19) What is the count of distinct customer types in the dataset?**
+**19) What is the count of distinct payment methods in the dataset?**
 
-**20) What is the count of distinct payment methods in the dataset?**
+**20) Which customer type occurs most frequently?**
 
-**21) Which customer type occurs most frequently?**
+**21) Identify the customer type with the highest purchase frequency.**
 
-**22) Identify the customer type with the highest purchase frequency.**
+**22) Determine the predominant gender among customers.**
 
-**23) Determine the predominant gender among customers.**
+**23) Examine the distribution of genders within each branch.**
 
-**24) Examine the distribution of genders within each branch.**
+**24) Identify the time of day when customers provide the most ratings.**
 
-**25) Identify the time of day when customers provide the most ratings.**
+**25) Determine the time of day with the highest customer ratings for each branch.**
 
-**26) Determine the time of day with the highest customer ratings for each branch.**
+**26) Identify the day of the week with the highest average ratings.**
 
-**27) Identify the day of the week with the highest average ratings.**
-
-**28) Determine the day of the week with the highest average ratings for each branch.**
+**27) Determine the day of the week with the highest average ratings for each branch.**
 
 # :key: Approach Used--
 
