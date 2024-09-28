@@ -131,7 +131,9 @@ This dataset contains sales transactions from three different branches of Amazon
           SUM(CASE WHEN  gross_income IS NULL THEN 1 ELSE 0 END) as Null_count_gross_income,
           SUM(CASE WHEN  rating IS NULL THEN 1 ELSE 0 END) as Null_count_rating
           FROM Amazon ;
-
+          
+          -- OR
+          
           DESCRIBE Amazon;
           
 **:paperclip: 2.Feature Engineering:** This will help us generate some new columns from existing ones.
