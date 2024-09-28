@@ -1,4 +1,4 @@
-# :chart_with_upwards_trend:Amazon-sales (SQL Project ):chart_with_upwards_trend:
+# :chart_with_upwards_trend:Amazon Sales Project ( SQL Project ):chart_with_upwards_trend:
 
 # :green_book: Purposes Of This Capstone Project
 
