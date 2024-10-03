@@ -258,10 +258,10 @@ ORDER BY customer_type,id_count DESC;
 
 
 -- 22) Examine the distribution of genders within each branch.
-SELECT BRANCH,GENDER,COUNT(GENDER) AS GENDER_SUM
-FROM amazon
-GROUP BY BRANCH,GENDER
-ORDER BY BRANCH, GENDER_SUM DESC;
+SELECT branch, gender, COUNT(gender) AS GENDER_SUM 
+FROM amazon 
+GROUP BY branch, gender 
+ORDER BY BRANCH, GENDER_SUM DESC; 
 
 
 -- 23) Identify the time of day when customers provide the most ratings.
@@ -286,10 +286,20 @@ ORDER BY AVG_RATING DESC;
 
 
 -- 26) Determine the day of the week with the highest average ratings for each branch.
-SELECT branch,day_name,round(avg(rating),2) as MAX_AVG_RATING
-FROM amazon
-GROUP BY branch,day_name
-ORDER BY branch,MAX_AVG_RATING DESC;
+ 
+WITH BranchRatings AS ( 
+    SELECT branch, day_name,  
+           ROUND(AVG(rating), 2) AS AVG_RATING 
+    FROM amazon 
+    GROUP BY branch, day_name 
+) 
+SELECT b1.branch, b1.day_name, b1.AVG_RATING 
+FROM BranchRatings b1 
+JOIN ( 
+    SELECT branch, MAX(AVG_RATING) AS MAX_AVG_RATING 
+    FROM BranchRatings 
+    GROUP BY branch 
+) b2 ON b1.branch = b2.branch AND b1.AVG_RATING = b2.MAX_AVG_RATING; 
 
 --------------------------------------------------------------------------------------------------
 
