@@ -531,7 +531,11 @@ So Sales in February is reduce to certain extend so with sales strategy to impro
 
 
     SELECT gender,round(AVG(unit_price* quantity),2) as avg_order_value FROM Amazon group by  gender ;
+
+
     SELECT customer_type,round(AVG(unit_price* quantity),2) as avg_order_value FROM Amazon group by  customer_type ;
+
+
     SELECT customer_type,gender,round(AVG(unit_price* quantity),2) as avg_order_value FROM Amazon group by  customer_type,gender ;
 
 This analysis aims to uncover the different customer segments, purchase trends and the profitability of each customer segment.
