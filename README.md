@@ -460,11 +460,19 @@ Male had preferences to Health & beauty followed by Electronics accessories, Foo
 
 **26) Determine the day of the week with the highest average ratings for each branch?**
 
-
-         SELECT branch,day_name,round(avg(rating),2) as MAX_AVG_RATING
-         FROM amazon
-         GROUP BY branch,day_name
-         ORDER BY branch,MAX_AVG_RATING DESC;
+    WITH BranchRatings AS ( 
+    SELECT branch, day_name,  
+           ROUND(AVG(rating), 2) AS AVG_RATING 
+    FROM amazon 
+    GROUP BY branch, day_name 
+    ) 
+    SELECT b1.branch, b1.day_name, b1.AVG_RATING 
+    FROM BranchRatings b1 
+    JOIN ( 
+        SELECT branch, MAX(AVG_RATING) AS MAX_AVG_RATING 
+        FROM BranchRatings 
+        GROUP BY branch 
+    ) b2 ON b1.branch = b2.branch AND b1.AVG_RATING = b2.MAX_AVG_RATING; 
 
 -- For branch A , Friday(7.31) as highest average rating followed byMonday(7.10) ,Sunday, Tuesday, Thursday, Wednesday and Saturday.
 For Branch B, Monday (7.27) as highest average rating followed by Tuesday, Sunday, Thursday, Saturday, Friday, Wednesday .
