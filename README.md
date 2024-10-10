@@ -4,7 +4,11 @@
 # :green_book: **Introduction :**
 
  The primary objective of this project is to analyze sales data from three branches of Amazon, located in Mandalay, Yangon, and Naypyitaw, to uncover key insights that can drive data-informed decisions for optimizing sales performance. By understanding the various factors influencing sales across these branches, the goal is to assist stakeholders in identifying trends, anomalies, and potential areas for improvement.
+
+ 
 This dataset comprises **1,000 rows and 17 columns**, capturing essential details about sales transactions, such as branch location, product categories, customer demographics, sales amounts, payment methods, and other relevant metrics. By thoroughly analyzing this data, the project aims to answer critical business questions, improve sales strategies, and optimize branch-specific performance.
+
+
 Through exploratory data analysis, statistical modeling, and data visualization, we will identify patterns, correlations, and trends that impact sales. The insights drawn from this analysis will help Amazon’s regional managers and decision-makers implement more effective strategies to boost revenue, enhance customer satisfaction, and streamline operations across all three branches.
 
 # :green_book: **Purpose :**
