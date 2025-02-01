@@ -1,4 +1,4 @@
-# :chart_with_upwards_trend:Amazon Sales Project ( SQL Project ):chart_with_upwards_trend:
+# :chart_with_upwards_trend:Amazon Marketplace Analytics(SQL Project):chart_with_upwards_trend:
 
 
 # :green_book: **Introduction :**
